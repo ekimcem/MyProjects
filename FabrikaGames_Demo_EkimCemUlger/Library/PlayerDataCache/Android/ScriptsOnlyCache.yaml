@@ -9,6 +9,7 @@ ScriptsOnlyBuild:
     - SpawnManager
     SimpleInput.Runtime.dll:
     - SimpleInputNamespace.AxisInputUIArrows
+    - SimpleInputNamespace.SteeringWheel
     Unity.Rider.Editor.dll:
     - Packages.Rider.Editor.UnitTesting.CallbackData
     Unity.TextMeshPro.dll:
@@ -977,4 +978,4 @@ ScriptsOnlyBuild:
   scenePathNames:
   - Assets/Scenes/MainMenu.unity
   - Assets/Scenes/Gameplay.unity
-  playerPath: C:/Users/ekimc/Desktop/FabrikaGames_EkimCemUlger_rev3.apk
+  playerPath: C:/Users/ekimc/Desktop/FabrikaGames_EkimCemUlger_final.apk

@@ -408,11 +408,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 224047778984712946, guid: 3066c3a8fcfd6fc4482868bf62045594, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 475
+      value: 470
       objectReference: {fileID: 0}
     - target: {fileID: 224047778984712946, guid: 3066c3a8fcfd6fc4482868bf62045594, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 150
+      value: 160
       objectReference: {fileID: 0}
     - target: {fileID: 224047778984712946, guid: 3066c3a8fcfd6fc4482868bf62045594, type: 3}
       propertyPath: m_LocalPosition.x
@@ -686,11 +686,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 224662034053572690, guid: afec60b2ce5345c4782cc0a45e5fa926, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 150
+      value: 160
       objectReference: {fileID: 0}
     - target: {fileID: 224662034053572690, guid: afec60b2ce5345c4782cc0a45e5fa926, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 475
+      value: 470
       objectReference: {fileID: 0}
     - target: {fileID: 224662034053572690, guid: afec60b2ce5345c4782cc0a45e5fa926, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1234,8 +1234,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 96.595535, y: 16.96323, z: 81.347305}
-  m_Center: {x: 0.2160263, y: -12.851803, z: -0.66116333}
+  m_Size: {x: 555.3, y: 16.96323, z: 964.5}
+  m_Center: {x: -10.59, y: -12.851803, z: 6.8}
 --- !u!1 &897449052
 GameObject:
   m_ObjectHideFlags: 0
@@ -2491,6 +2491,18 @@ PrefabInstance:
       propertyPath: arrowsHorizontal
       value: 
       objectReference: {fileID: 1855446064}
+    - target: {fileID: 2998351833792085880, guid: eb256a5274a1d314ba8eb5b2fa011630, type: 3}
+      propertyPath: orthographic
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2998351833792085880, guid: eb256a5274a1d314ba8eb5b2fa011630, type: 3}
+      propertyPath: field of view
+      value: 70
+      objectReference: {fileID: 0}
+    - target: {fileID: 2998351833792085880, guid: eb256a5274a1d314ba8eb5b2fa011630, type: 3}
+      propertyPath: far clip plane
+      value: 1000
+      objectReference: {fileID: 0}
     - target: {fileID: 3321106096588126839, guid: eb256a5274a1d314ba8eb5b2fa011630, type: 3}
       propertyPath: m_RootOrder
       value: 0
