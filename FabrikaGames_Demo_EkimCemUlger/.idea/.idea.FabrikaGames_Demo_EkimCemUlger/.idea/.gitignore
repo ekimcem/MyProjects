@@ -1,0 +1,13 @@
+﻿# Default ignored files
+/shelf/
+/workspace.xml
+# Rider ignored files
+/contentModel.xml
+/.idea.FabrikaGames_Demo_EkimCemUlger.iml
+/projectSettingsUpdater.xml
+/modules.xml
+# Datasource local storage ignored files
+/../../../../../../../../../../../:\Users\ekimc\Desktop\GameStudio\git\MyProjects\FabrikaGames_Demo_EkimCemUlger\.idea\.idea.FabrikaGames_Demo_EkimCemUlger\.idea/dataSources/
+/dataSources.local.xml
+# Editor-based HTTP Client requests
+/httpRequests/
