@@ -14,7 +14,7 @@ public class PlayerController : MonoBehaviour
 
     Vector3 lastPos;
     bool isGround;
-    bool gameOver=false;
+    public bool gameOver=false;
     public bool finish = false;
 
     Animator playerAnim;
@@ -51,11 +51,11 @@ public class PlayerController : MonoBehaviour
         else if (finish) {
             cameraFollowPlayer.paintingAim = true;
         }
-        else if (gameOver)
+       /* else if (gameOver)
         {
           
             restartButton.SetActive(true);
-        }
+        }*/
 
     }
 

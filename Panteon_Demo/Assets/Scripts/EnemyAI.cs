@@ -19,7 +19,7 @@ public class EnemyAI : MonoBehaviour
     private float enemySpeed= 1.35f;
     private float angle = 100;
     private float rayRange = 0.2f;
-    private float xBound=0.406f;
+   // private float xBound=0.406f;
  
     private int numberofRays = 180;
 
@@ -32,17 +32,17 @@ public class EnemyAI : MonoBehaviour
 
     void Update()
     {  
-        DestroyOutOfBounds();
+        //DestroyOutOfBounds();
         EnemyMovement();
     }
 
-    private void DestroyOutOfBounds()
+    /*private void DestroyOutOfBounds()
     {
         if (transform.position.x > xBound || transform.position.x < -xBound)
         {
             Invoke("GameOver", 2f);
         }
-    }
+    }*/
 
     private void EnemyMovement()
     {
@@ -82,11 +82,11 @@ public class EnemyAI : MonoBehaviour
     }
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.CompareTag("Obstacle"))
+        if (collision.gameObject.CompareTag("Obstacle")||collision.gameObject.CompareTag("Water"))
         {
             playerAnim.SetBool("isDead", true);
             isDead = true;
-            Invoke("GameOver", 2f);
+            Invoke("GameOver", 0.5f);
 
 
         }
@@ -107,13 +107,13 @@ public class EnemyAI : MonoBehaviour
            
 
         }
-        else if (collision.gameObject.CompareTag("Water"))
+        /*else if (collision.gameObject.CompareTag("Water"))
 
         {
             playerAnim.SetBool("isDead", true);
             isDead = true;
             Invoke("GameOver", 2f);
-        }
+        }*/
          
     }
     private void OnCollisionStay(Collision collision)

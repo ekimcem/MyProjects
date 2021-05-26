@@ -14,55 +14,63 @@ public class GameManager : MonoBehaviour
     public ArrayList rank = new ArrayList();
     public Text position;
     string playerRank;
-    // Start is called before the first frame update
+    public GameObject GameOverPanel;
+    public GameObject TextScore;
+    bool gameStart=false;
+    public GameObject PausePanel;
+
+
+  
     void Start()
     {
         Time.timeScale = 0;
         InstantiateEnemies();
     }
 
-    
-
-    // Update is called once per frame
     void Update()
+    {
+
+        if (Input.GetMouseButton(0) && Time.timeScale == 0&&!gameStart)
+        {
+            Time.timeScale = 1;
+            gameStart = true;
+        }
+    }
+
+    
+    void FixedUpdate()
     {
             
             
         liveEnemies = GameObject.FindGameObjectsWithTag("Enemy");
         for(int i = 0; i< liveEnemies.Length; i++)
-        {
-            rank.Add(GameObject.FindGameObjectWithTag("Player").transform.position.z);
-            rank.Add(liveEnemies[i].transform.position.z);
-            rank.Sort();
-            playerRank = (11-rank.IndexOf(GameObject.FindGameObjectWithTag("Player").transform.position.z)).ToString();
-            Debug.Log(playerRank);
-            position.text = (playerRank + " /11");
+        {           
+            rank.Add(liveEnemies[i].transform.position.z);      
         }
+        rank.Add(GameObject.FindGameObjectWithTag("Player").transform.position.z);
+        rank.Sort();
+        rank.Reverse();
+        playerRank = (1+rank.IndexOf(GameObject.FindGameObjectWithTag("Player").transform.position.z)).ToString();
+        position.text = (playerRank + " /11");
         rank.Clear();
 
-        
 
 
 
-
-
-
-
-
-
-
-
-
-        if (Input.GetMouseButton(0))
-        {
-            Time.timeScale = 1;
-        }
         if (pc.finish == true)
         {
             Invoke("CreatePaintingWall", 1.5f);
         }
 
+        if (pc.gameOver == true) 
+        {
+            GameOverPanel.SetActive(true);
+        }
 
+        if(pc.finish == true)
+        {
+            TextScore.SetActive(false);
+        }
         
     }
     private Vector3 RandomSpawnVectorGenerator()
@@ -72,6 +80,7 @@ public class GameManager : MonoBehaviour
         Vector3 spawnPos = new Vector3(x, 0.037f, z);
         return spawnPos;
     }
+
     public void InstantiateSingleEnemy()
     {
         
@@ -87,6 +96,7 @@ public class GameManager : MonoBehaviour
 
         }
     }
+
     IEnumerator CreatePaintingWall()
     {
         
@@ -99,5 +109,16 @@ public class GameManager : MonoBehaviour
     {
         Scene currentScene = SceneManager.GetActiveScene();
         SceneManager.LoadScene(currentScene.name);
+    }
+    public void PauseButton()
+    {
+        Time.timeScale = 0;
+        PausePanel.SetActive(true);
+
+    }
+    public void ResumeButton()
+    {
+        Time.timeScale = 1;
+        PausePanel.SetActive(false);
     }
 }
